@@ -7,7 +7,9 @@ This code is based on the article
 ##Batching
 In JDBC, there's no batch call for select statements, so if you have a query of
 the form 
-    select x from y where id in ? 
+```SQL
+select x from y where id in ? 
+```
 you have to create a new statement
 every time. i.e. you can't use a prepared statement. For extra vendor specific
 excitement, Oracle limits the number of values in a subselect to 1000.
@@ -20,10 +22,11 @@ values until there are no values left to extract.
 
 For example, if I define my batch sizes as [1, 4, 11, 51] and I have 221 values
 to query for, that breaks down into the following set of batches
-    4 * 51 (204)
-    1 * 11 ( 11)
-    1 *  4 (  4)
-    2 *  1 (  1)
+
+     4 * 51 (204)
+     1 * 11 ( 11)
+     1 *  4 (  4)
+     2 *  1 (  1)
 
 The java code to do this is not that complicated but it feels
 cumbersome, particularly if you have to implement it without using Guice,
