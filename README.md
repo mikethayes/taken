@@ -2,7 +2,7 @@ takeN
 =====
 
 This code is based on the article
-[Batching Select Statements in JDBC|http://www.javaranch.com/journal/200510/Journal200510.jsp#a2] by [Jeanne Boyarsky|http://www.coderanch.com/how-to/java/ActiveStaff#JeanneBoyarsky]
+[Batching Select Statements in JDBC](http://www.javaranch.com/journal/200510/Journal200510.jsp#a2) by [Jeanne Boyarsky](http://www.coderanch.com/how-to/java/ActiveStaff#JeanneBoyarsky)
 
 ##Batching
 In JDBC, there's no batch call for select statements, so if you have a query of
